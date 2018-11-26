@@ -1,4 +1,4 @@
-
+const PubSub = require('../helpers/pub_sub.js')
 
 const FormView = function() {
 
@@ -10,7 +10,9 @@ FormView.prototype.bindEvents = function () {
     event.preventDefault();
     const inputtedNumber = event.target.number.value;
 
-    console.log("Inputted number:" inputtedNumber);
+    PubSub.publish("FormView:number-submitted", inputtedNumber);
+
+    console.log("Inputted number:", inputtedNumber);
   })
 };
 

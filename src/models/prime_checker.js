@@ -7,15 +7,16 @@ const PrimeChecker = function() {
 PrimeChecker.prototype.bindEvents = function () {
   PubSub.subscribe("FormView:number-submitted", (event) => {
     const inputtedNumber = event.detail;
-    console.log(inputtedNumber);
-  })
+    const result = this.isPrime(inputtedNumber);
+    PubSub.publish('PrimeChecker:result-calculated', result);
+  });
 };
 
 
 PrimeChecker.prototype.isPrime = function (number) {
   let numberIsPrime = true;
 
-  for (var i = 2; i < number; i++) {
+  for (let i = 2; i < number; i++) {
     if (i * i === number) {
       numberIsPrime = false;
     };
@@ -26,10 +27,12 @@ PrimeChecker.prototype.isPrime = function (number) {
 
 module.exports = PrimeChecker;
 //
-// qwerty = new PrimeChecker;
-//
-// const test1 = qwerty.isPrime(7);
-// const test2 = qwerty.isPrime(9);
-//
-// console.log(test1);
-// console.log(test2);
+qwerty = new PrimeChecker;
+
+const test1 = qwerty.isPrime(7);
+const test2 = qwerty.isPrime(9);
+const test3 = qwerty.isPrime(11);
+
+console.log(test1);
+console.log(test2);
+console.log(test3);
