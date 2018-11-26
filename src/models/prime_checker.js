@@ -4,6 +4,12 @@ const PrimeChecker = function() {
 
 };
 
+PrimeChecker.prototype.bindEvents = function () {
+  PubSub.subscribe("FormView:number-submitted", (event) => {
+    const inputtedNumber = event.detail;
+    console.log(inputtedNumber);
+  })
+};
 
 
 PrimeChecker.prototype.isPrime = function (number) {
@@ -18,7 +24,7 @@ PrimeChecker.prototype.isPrime = function (number) {
   return numberIsPrime;
 };
 
-module.exports = PrimerChecker;
+module.exports = PrimeChecker;
 //
 // qwerty = new PrimeChecker;
 //
