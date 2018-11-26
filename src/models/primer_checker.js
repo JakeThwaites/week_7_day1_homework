@@ -18,10 +18,12 @@ PrimeChecker.prototype.isPrime = function (number) {
   return numberIsPrime;
 };
 
-qwerty = new PrimeChecker;
-
-const test1 = qwerty.isPrime(7);
-const test2 = qwerty.isPrime(9);
-
-console.log(test1);
-console.log(test2);
+module.exports = PrimerChecker;
+//
+// qwerty = new PrimeChecker;
+//
+// const test1 = qwerty.isPrime(7);
+// const test2 = qwerty.isPrime(9);
+//
+// console.log(test1);
+// console.log(test2);
