@@ -17,22 +17,23 @@ PrimeChecker.prototype.isPrime = function (number) {
   let numberIsPrime = true;
 
   for (let i = 2; i < number; i++) {
-    if (i * i === number) {
+    if (number % i === 0) {
       numberIsPrime = false;
     };
   };
 
   return numberIsPrime;
+
 };
 
 module.exports = PrimeChecker;
 //
-qwerty = new PrimeChecker;
-
-const test1 = qwerty.isPrime(7);
-const test2 = qwerty.isPrime(9);
-const test3 = qwerty.isPrime(11);
-
-console.log(test1);
-console.log(test2);
-console.log(test3);
+// qwerty = new PrimeChecker;
+//
+// const test1 = qwerty.isPrime(7);
+// const test2 = qwerty.isPrime(9);
+// const test3 = qwerty.isPrime(11);
+//
+// console.log(test1);
+// console.log(test2);
+// console.log(test3);

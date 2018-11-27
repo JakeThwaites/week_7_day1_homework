@@ -4,9 +4,9 @@ const PubSub = {
     const event = new CustomEvent(channel, {detail: payload});
     document.dispatchEvent(event);
   },
+  
   subscribe: function(channel, callback) {
     console.log(`Subscribe on channel ${channel}`);
-
     document.addEventListener(channel, callback);
   }
 };
